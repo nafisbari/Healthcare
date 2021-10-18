@@ -1,6 +1,4 @@
 import React from 'react';
-import { Nav } from 'react-bootstrap';
-import { HashLink } from 'react-router-hash-link';
 import appstore from './images/androidget.png';
 import playstore from './images/appstore.png';
 
