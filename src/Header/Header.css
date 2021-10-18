@@ -1,0 +1,17 @@
+.light-bg{
+    background-color: #213360;
+}
+.icon-color{
+    color: #21cdc0;
+}
+.icon-color:hover{
+    color: aliceblue;
+}
+.btn-color{
+    background-color: #21cdc0;
+    padding: 5px 20px;
+}
+.btn-color:hover{
+    background-color: #2a6861f6;
+    color: aliceblue;
+}
