@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
-import { signInWithPopup } from '@firebase/auth';
 import { useHistory, useLocation } from "react-router";
 
 

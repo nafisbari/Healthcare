@@ -1,12 +1,30 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
+import { useHistory, useLocation } from "react-router";
+import useAuth from '../../hooks/useAuth';
 
 
 
 const Register = () => {
-    const { handleReg, handleEmailChange, handlePassChange, error, user, handleNameChange } = useFirebase();
+    const { handleReg, handleEmailChange, handlePassChange, error, user, handleNameChange, setError, setUser, setIsLoading, signInUsingGoogle } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/home';
+
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                setUser(result.user);
+                history.push(redirect_uri);
+                console.log(result.user);
+                setError(' ')
+            })
+            .catch((error) => {
+                setError(error.message)
+            })
+            .finally(() => setIsLoading(false))
+    }
     return (
         <div className="container">
             <div onSubmit={handleReg} className="my-5">
@@ -45,6 +63,7 @@ const Register = () => {
 
 
                 <Button type="submit" onClick={handleReg} className="btn-color" variant=" mx-3"><i className="fas fa-sign-in-alt" /> Register</Button>
+                <Button type="submit" onClick={handleGoogleLogin} className="btn-color" variant=" mx-3"><i className="fas fa-sign-in-alt" />  Google Sign In</Button>
                 <h2>{user.email && <h3>{user.displayName}</h3>}</h2>
                 <Link to="/login"><p className="text-color text-decoration-none">Already Registered?</p></Link>
 
