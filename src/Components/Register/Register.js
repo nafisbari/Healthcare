@@ -6,22 +6,22 @@ import useFirebase from '../../hooks/useFirebase';
 
 
 const Register = () => {
-    const { handleReg, handleEmailChange, handlePassChange, error, user } = useFirebase();
+    const { handleReg, handleEmailChange, handlePassChange, error, user, handleNameChange } = useFirebase();
     return (
         <div className="container">
             <div onSubmit={handleReg} className="my-5">
                 <h1 className="text-color text-center mb-3">Please Register </h1>
 
-                {/* {isLogin ? 'Login' : 'Register'} */}
+
 
                 {/* Name field */}
-                {/* {!isLogin && <div className="row mb-3">
+                <div className="row mb-3 text-start">
                     <label htmlFor="inputAddress" className="col-sm-2 col-form-label">Name</label>
                     <div className="col-sm-10">
                         <input onBlur={handleNameChange} type="text" className="form-control" required placeholder="Your Name" />
                     </div>
 
-                </div>} */}
+                </div>
 
                 {/* Email field */}
                 <div className="row mb-3">

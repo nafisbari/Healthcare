@@ -130,7 +130,7 @@ const useFirebase = () => {
 export default useFirebase; */
 
 
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from '../Firebase/firebase.init';
 
@@ -141,6 +141,7 @@ const useFirebase = () => {
     const [error, setError] = useState(' ');
     const [email, setEmail] = useState(' ');
     const [pass, setPass] = useState('');
+    const [name, setName] = useState('')
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -161,6 +162,10 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false))
     }
 
+    //handeling name change
+    const handleNameChange = e => {
+        setName(e.target.value)
+    }
 
     //handeling email
     const handleEmailChange = e => {
@@ -180,20 +185,29 @@ const useFirebase = () => {
         }
         createUserWithEmailAndPassword(auth, email, pass)
             .then(result => {
-                setUser(result.user)
+                setUser(result.user);
+                setUserName();
+
             })
             .catch(error => {
                 setError(error.message)
             })
+    }
+
+    const setUserName = () => {
+        updateProfile(auth.currentUser, { displayName: name })
+            .then(result => { })
 
     }
     //login
     const handleLogin = () => {
         setIsLoading(true)
         signInWithEmailAndPassword(auth, email, pass)
-            .then(result => (
-                console.log(result.user)
-            ))
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+
+            })
             .catch(error => {
                 setError(error.message)
             })
@@ -237,7 +251,9 @@ const useFirebase = () => {
         handleEmailChange,
         handlePassChange,
         handleLogin,
-        isLoading
+        isLoading,
+        handleNameChange,
+        name,
     }
 
 }
