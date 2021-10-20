@@ -25,14 +25,14 @@ const Banner = () => {
                         <div className="row-lg ">
                             <div className="col-lg-6 banner-text">
                                 <div>
-                                    <h1 className="  ">Providing the Best Medical Service</h1>
+                                    <h1 className=" ">Providing the Best Medical Service</h1>
                                     <p className="lh-1">The health and well-being of our patients and their health care team will always be our priority.</p>
                                 </div>
-                                <div className="d-flex icons">
-                                    <img src={icon1} alt="" />
-                                    <img src={icon2} alt="" />
-                                    <img src={icon3} alt="" />
-                                    <img src={icon4} alt="" />
+                                <div className="d-flex icons ">
+                                    <img src={icon2} className="d-none d-lg-block" alt="" />
+                                    <img src={icon1} className="d-none d-lg-block" alt="" />
+                                    <img src={icon3} className="d-none d-lg-block" alt="" />
+                                    <img src={icon4} className="d-none d-lg-block" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -53,7 +53,7 @@ const Banner = () => {
                                 <div>
                                     <h1 className="">Providing the Best Medical Service</h1>
                                     <p className="lh-1">The health and well-being of our patients and their health care team will always be our priority.</p>
-                                    
+
                                 </div>
                                 <div className="d-flex icons">
                                     <img src={icon1} alt="" className="responsive" />
@@ -92,7 +92,7 @@ const Banner = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-            
+
         </div>
     );
 };
