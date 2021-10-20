@@ -8,6 +8,7 @@ import icon2 from './Images/icon-2.png';
 import icon3 from './Images/icon-3.png';
 import icon4 from './Images/icon-4.png';
 
+
 const Banner = () => {
     return (
         <div>
@@ -26,7 +27,6 @@ const Banner = () => {
                                 <div>
                                     <h1 className="  ">Providing the Best Medical Service</h1>
                                     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                    <i class="icon-blood-test" />
                                 </div>
                                 <div className="d-flex icons">
                                     <img src={icon1} alt="" />
@@ -51,15 +51,15 @@ const Banner = () => {
                         <div className="row-lg ">
                             <div className="col-lg-6 banner-text">
                                 <div>
-                                    <h1 className="  ">Providing the Best Medical Service</h1>
+                                    <h1 className="">Providing the Best Medical Service</h1>
                                     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                    <i class="icon-blood-test" />
+                                    
                                 </div>
                                 <div className="d-flex icons">
-                                    <img src={icon1} alt="" />
-                                    <img src={icon2} alt="" />
-                                    <img src={icon3} alt="" />
-                                    <img src={icon4} alt="" />
+                                    <img src={icon1} alt="" className="responsive" />
+                                    <img src={icon2} alt="" className="responsive" />
+                                    <img src={icon3} alt="" className="responsive" />
+                                    <img src={icon4} alt="" className="responsive" />
                                 </div>
                             </div>
                         </div>
@@ -76,11 +76,10 @@ const Banner = () => {
 
                     <Carousel.Caption>
                         <div className="row-lg ">
-                            <div className="col-lg-6 banner-text">
+                            <div className="banner-text">
                                 <div>
                                     <h1 className="  ">Providing the Best Medical Service</h1>
                                     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                    <i class="icon-blood-test" />
                                 </div>
                                 <div className="d-flex icons">
                                     <img src={icon1} alt="" />
@@ -93,6 +92,7 @@ const Banner = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
+            
         </div>
     );
 };

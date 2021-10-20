@@ -3,6 +3,7 @@
     line-height: 2.5;
     color: #0e204d;
     
+    
 }
 .banner-text h1{
     font-size: 56px;   
@@ -11,13 +12,20 @@
     font-size: 20px;
 }
 .icons img{
-    border-radius: 50%;
+    border-radius: 90%;
     padding: 10px;
-    width: 100px;
+    width: 8vw;
     align-items: center;
+    /* width: 12%; */
+    height: auto;
 }
 .icons img:hover{
     transform: scale(1.1);
-    transition: 0.5s ease-in-out;
-    background-color: gray;
+    transition: 0.8s;
+    background-color: white;
 }
+
+/* .responsive{
+    width: 50%;
+    height: auto;
+} */

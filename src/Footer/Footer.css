@@ -1,4 +1,6 @@
-.text{
-    text-decoration: none;
-    color: aliceblue;
+.bg-color{
+    background-color: #213360;  
+}
+.text-hover h2:hover, .text-hover li:hover{
+    color: rgb(200, 172, 136);   
 }

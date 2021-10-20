@@ -1,0 +1,33 @@
+.background{
+    position: relative;
+    top: -30px;
+    z-index: 9;
+}
+.background-1{
+background-color: #21cdc0;
+color: aliceblue;
+}
+.background-2{
+background-color: #3851a2;
+color: aliceblue;
+}
+.background-3{
+    background-color: #2d4990;
+    color: aliceblue;
+
+}
+.btn-color2{
+    
+    background-color: #3851a2;
+    padding: 8px 23px;
+    border-radius: 20px;
+    border: 1px solid aliceblue;
+    position: relative;
+    left: -35px;
+    color: aliceblue;
+
+}
+.btn-color2:hover{
+    background-color: #ebf4f3;
+    color: #21cdc0;
+}
