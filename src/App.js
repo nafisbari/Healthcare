@@ -11,6 +11,7 @@ import Login from './Components/Login/Login';
 import Doctors from './Components/Doctors/Doctors';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import About from './Components/About/About';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
             </Route>
             <Route path="/register">
               <Register></Register>
+            </Route>
+            <Route path="/about">
+              <About></About>
             </Route>
             <PrivateRoute path="/more/:moreId">
               <More></More>

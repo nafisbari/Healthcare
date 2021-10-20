@@ -5,6 +5,8 @@ import contact from './Images/contact.png'
 import timetable from './Images/timetable.png'
 import hours from './Images/hours.png'
 
+
+
 const Info = () => {
     return (
         <div className="container background">

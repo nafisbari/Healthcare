@@ -2,11 +2,43 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
+import { signInWithPopup } from '@firebase/auth';
+import { useHistory, useLocation } from "react-router";
 
 
 const Login = () => {
-    const { signInUsingGoogle, logOut, error, user, handleLogin, handleEmailChange, handlePassChange } = useAuth();
+    const { signInUsingGoogle, logOut, error, user, handleLogin, handleEmailChange, handlePassChange, setError, setUser, setIsLoading } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/home';
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                setUser(result.user);
+                history.push(redirect_uri);
+                console.log(result.user);
+                setError(' ')
+            })
+            .catch((error) => {
+                setError(error.message)
+            })
+            .finally(() => setIsLoading(false))
+    }
+    const handleSubmit = () => {
+        handleLogin()
+            .then(result => {
+                const user = result.user;
+                history.push(redirect_uri);
+                console.log(user)
+                setError(' ')
 
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+            .finally(() => setIsLoading(false))
+
+    }
     return (
         <div className="container">
             <div className="my-5">
@@ -39,11 +71,11 @@ const Login = () => {
                     }
                 </div>
 
-                <Button type="submit" onClick={handleLogin} className="btn-color" variant=" mx-3"><i className="fas fa-sign-in-alt" /> Login</Button>
+                <Button type="submit" onClick={handleSubmit} className="btn-color" variant=" mx-3"><i className="fas fa-sign-in-alt" /> Login</Button>
 
 
 
-                <Button type="submit" onClick={signInUsingGoogle} className="btn-color" variant=" mx-3"><i className="fas fa-sign-in-alt" /> Google Sign In</Button>
+                <Button type="submit" onClick={handleGoogleLogin} className="btn-color" variant=" mx-3"><i className="fas fa-sign-in-alt" /> Google Sign In</Button>
                 {user.email && <Button onClick={logOut} className="btn-color" variant=" mx-3">Logout <i className="fas fa-sign-in-alt" /></Button>}
 
 

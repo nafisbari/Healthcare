@@ -1,0 +1,22 @@
+.back-color{
+    background-color: #21cdc0;
+}
+.card{
+border-radius: 10px;
+box-shadow: 2px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.card .img-hover{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    box-shadow: 5px 2px 5px 7px rgba(0, 0, 0, 0.2);
+
+}
+.card:hover .img-hover{
+    display: inline;
+    top:-50px;
+    /* transform:translate(1px, -25px); */
+    transition: 2s ease;
+}

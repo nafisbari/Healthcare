@@ -21,9 +21,9 @@ const Doctor = (props) => {
 
                             <Link to="/doctors"><Button className="btn-color1 " variant=" mx-3"> Read More <i className="fas fa-arrow-right" /> </Button></Link>
 
-                            <i className="fab fa-facebook fs-2 text-color" />
-                            <i className="fab fa-twitter text-color fs-2" />
-                            <i className="fas fa-phone-square-alt text-color fs-2" />
+                           <p> <i className="fab fa-facebook fs-2 text-color" />
+                             <i className="fab fa-twitter text-color fs-2" />
+                             <i className="fas fa-phone-square-alt text-color fs-2" /></p>
                         </Card.Body>
                     </div>
 

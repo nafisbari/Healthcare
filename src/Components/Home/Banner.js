@@ -26,7 +26,7 @@ const Banner = () => {
                             <div className="col-lg-6 banner-text">
                                 <div>
                                     <h1 className="  ">Providing the Best Medical Service</h1>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    <p className="lh-1">The health and well-being of our patients and their health care team will always be our priority.</p>
                                 </div>
                                 <div className="d-flex icons">
                                     <img src={icon1} alt="" />
@@ -52,7 +52,7 @@ const Banner = () => {
                             <div className="col-lg-6 banner-text">
                                 <div>
                                     <h1 className="">Providing the Best Medical Service</h1>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    <p className="lh-1">The health and well-being of our patients and their health care team will always be our priority.</p>
                                     
                                 </div>
                                 <div className="d-flex icons">
@@ -76,10 +76,10 @@ const Banner = () => {
 
                     <Carousel.Caption>
                         <div className="row-lg ">
-                            <div className="banner-text">
+                            <div className="banner-text col-lg-6">
                                 <div>
                                     <h1 className="  ">Providing the Best Medical Service</h1>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    <p className="lh-1">The health and well-being of our patients and their health care team will always be our priority.</p>
                                 </div>
                                 <div className="d-flex icons">
                                     <img src={icon1} alt="" />

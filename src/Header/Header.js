@@ -29,7 +29,7 @@ const Header = () => {
                             <Nav.Link as={HashLink} to="/home">Home</Nav.Link>
                             <Nav.Link as={HashLink} to="/services#services">Departments</Nav.Link>
                             <Nav.Link as={HashLink} to="/doctors#doctors">Doctors</Nav.Link>
-                            <Nav.Link to="">DO It Later</Nav.Link>
+                            <Nav.Link as={HashLink} to="/about#about">About</Nav.Link>
                         </Nav>
 
                         {user?.email ?
@@ -40,7 +40,7 @@ const Header = () => {
                             {user?.email && <p className="fw-bold"> {user?.displayName}</p>}
                         </Navbar.Text>
 
-                      
+
 
                     </Navbar.Collapse>
                 </Container>
